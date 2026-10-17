@@ -1,0 +1,221 @@
+.fund-balance-report {
+  &__table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: rgb(4 6 10 / 22%);
+    scrollbar-gutter: stable;
+  }
+
+  &__table {
+    width: 100%;
+    min-width: 54rem;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+
+    caption {
+      padding: var(--space-3) var(--space-4);
+      color: var(--color-text-muted);
+      background: rgb(255 255 255 / 2%);
+      font-size: var(--font-size-small);
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    thead {
+      color: var(--color-text-muted);
+      background: var(--color-surface-soft);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    tbody {
+      tr {
+        transition: background var(--transition-fast);
+
+        &:hover {
+          background: rgb(191 112 255 / 5%);
+        }
+
+        &:last-child {
+          th,
+          td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+      th {
+        color: var(--color-text);
+        font-weight: 700;
+      }
+
+      td {
+        color: var(--color-text-soft);
+      }
+    }
+  }
+}
+
+.financial-accounting {
+  display: grid;
+  gap: var(--space-4);
+
+  &__heading,
+  &__section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: var(--space-3);
+
+    p {
+      margin: 0.3rem 0 0;
+      color: var(--color-text-muted);
+    }
+  }
+
+  &__heading > div > p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+  }
+
+  &__export,
+  &__row-toggle {
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    color: var(--color-text);
+    background: var(--color-surface-soft);
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--color-primary);
+      background: var(--color-surface-hover);
+    }
+  }
+
+  &__export {
+    padding: 0.65rem 0.9rem;
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: rgb(255 255 255 / 2%);
+
+    label {
+      display: grid;
+      min-width: 11rem;
+      gap: 0.35rem;
+      color: var(--color-text-muted);
+      font-size: var(--font-size-small);
+      font-weight: 700;
+    }
+
+    select {
+      min-height: 2.5rem;
+      padding: 0.45rem 0.65rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-small);
+      color: var(--color-text);
+      background: var(--color-surface);
+      font: inherit;
+    }
+  }
+
+  &__section-heading > span {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+  }
+
+  &__row-toggle {
+    padding: 0.4rem 0.65rem;
+    font-size: var(--font-size-small);
+  }
+
+  &__expanded-row {
+    background: rgb(255 255 255 / 2%);
+
+    > td {
+      white-space: normal !important;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: var(--space-3);
+      margin: 0;
+    }
+
+    dl div {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    dt {
+      color: var(--color-text-muted);
+      font-size: var(--font-size-small);
+    }
+
+    dd {
+      margin: 0;
+      color: var(--color-text);
+      font-weight: 700;
+    }
+  }
+
+  &__summary-table {
+    min-width: 44rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .fund-balance-report {
+    &__table {
+      th,
+      td {
+        padding: 0.75rem;
+      }
+    }
+  }
+
+  .financial-accounting {
+    &__heading,
+    &__section-heading {
+      align-items: start;
+      flex-direction: column;
+    }
+
+    &__export {
+      width: 100%;
+    }
+
+    &__filters {
+      display: grid;
+
+      label,
+      select {
+        width: 100%;
+      }
+    }
+
+    &__expanded-row dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}

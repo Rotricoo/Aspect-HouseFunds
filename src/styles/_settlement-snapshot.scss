@@ -1,0 +1,166 @@
+.settlement-snapshot {
+  padding: 1.25rem;
+  background: linear-gradient(145deg, rgba(21, 48, 39, 0.76), rgba(11, 18, 22, 0.9));
+  border: 1px solid rgba(112, 240, 171, 0.2);
+  border-radius: 1.4rem;
+
+  &__heading {
+    display: grid;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  &__heading p {
+    margin: 0;
+    color: #75e8ad;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    font-size: 0.72rem;
+    font-weight: 750;
+  }
+  &__heading h3 {
+    margin: 0;
+    font-size: 1.35rem;
+  }
+  &__heading span {
+    color: #9caaa6;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  &__cards article {
+    display: grid;
+    gap: 0.45rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+  }
+  &__cards article > span {
+    color: #9fadaa;
+    font-size: 0.8rem;
+  }
+  &__cards article > strong {
+    font-size: clamp(1.25rem, 2vw, 1.85rem);
+    color: #a9f778;
+  }
+  &__cards article > p {
+    margin: 0;
+    color: #e7efeb;
+    line-height: 1.35;
+  }
+  &__card--primary {
+    border-color: rgba(118, 242, 176, 0.35) !important;
+    box-shadow: inset 0 0 2rem rgba(55, 203, 139, 0.08);
+  }
+  &__details {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: rgba(4, 12, 14, 0.45);
+    border: 1px solid rgba(112, 240, 171, 0.15);
+    border-radius: 1rem;
+  }
+  &__details > summary,
+  &__ledger > summary {
+    color: #dce9e3;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  &__calculation {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-top: 1rem;
+  }
+  &__calculation-row {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.85rem;
+    background: rgba(255, 255, 255, 0.035);
+    border-radius: 0.8rem;
+  }
+  &__calculation-row > span {
+    color: #9fadaa;
+    font-size: 0.78rem;
+  }
+  &__calculation-row > strong {
+    color: #a9f778;
+    font-size: 1.1rem;
+  }
+  &__calculation-row > p {
+    margin: 0;
+    color: #dce9e3;
+    font-size: 0.85rem;
+  }
+  &__note {
+    color: #92a29d;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  &__ledger {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  &__table-wrapper {
+    max-width: 100%;
+    margin-top: 0.75rem;
+    overflow: auto;
+  }
+  &__table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+  }
+  &__table th,
+  &__table td {
+    padding: 0.7rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    text-align: left;
+    white-space: nowrap;
+  }
+  &__table th {
+    color: #dce9e3;
+  }
+  &__table td {
+    color: #a6b4af;
+  }
+  &__contributions {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__contributions li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    padding: 0.7rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0.65rem;
+  }
+  &__contributions span {
+    color: #a6b4af;
+  }
+  &__contributions strong {
+    color: #a9f778;
+  }
+
+  @media (max-width: 1050px) {
+    &__cards,
+    &__calculation {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 620px) {
+    &__cards,
+    &__calculation {
+      grid-template-columns: 1fr;
+    }
+    &__contributions li {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.financial-movements-admin {
+  padding: 1.25rem;
+  color: #eef6f1;
+  background: rgba(12, 20, 22, 0.76);
+  border: 1px solid rgba(110, 239, 170, 0.16);
+  border-radius: 1.25rem;
+
+  summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 750;
+  }
+  > p {
+    color: #9faead;
+  }
+
+  &__list {
+    display: grid;
+    gap: 0.65rem;
+    max-height: 24rem;
+    overflow: auto;
+    padding-right: 0.35rem;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.9rem;
+  }
+  &__item > div:first-child {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+  &__item small,
+  &__item span {
+    color: #94a19f;
+  }
+  &__item--cancelled {
+    opacity: 0.58;
+  }
+  &__item--cancelled strong {
+    text-decoration: line-through;
+  }
+  &__actions {
+    display: flex;
+    gap: 0.4rem;
+  }
+  &__actions button {
+    padding: 0.5rem 0.7rem;
+    color: inherit;
+    background: #151d25;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 760px) {
+    &__item {
+      grid-template-columns: 1fr auto;
+    }
+    &__actions {
+      grid-column: 1 / -1;
+    }
+  }
+}

@@ -1,0 +1,164 @@
+.purchase-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  height: 100%;
+  max-height: none;
+  min-height: 12rem;
+  padding-right: var(--space-2);
+  overflow-y: auto;
+  list-style: none;
+
+  &__empty-state {
+    display: grid;
+    min-height: 12rem;
+    place-content: center;
+    gap: var(--space-2);
+    border: 1px dashed var(--color-border-strong);
+    border-radius: var(--radius-large);
+    color: var(--color-text-muted);
+    text-align: center;
+
+    button {
+      justify-self: center;
+      min-height: 2.75rem;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-pill);
+      color: var(--color-text);
+      background: var(--color-surface-soft);
+      font-weight: 720;
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--color-primary);
+        background: var(--color-surface-hover);
+      }
+    }
+
+    strong {
+      color: var(--color-text);
+      font-size: 1.05rem;
+    }
+  }
+
+  &__item {
+    min-width: 0;
+  }
+
+  &__load-more-item {
+    display: grid;
+    grid-column: 1 / -1;
+    place-items: center;
+    padding: var(--space-2) 0 var(--space-3);
+  }
+
+  &__load-more {
+    min-height: 2.75rem;
+    padding-inline: var(--space-5);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    color: var(--color-text);
+    background: var(--color-surface-soft);
+    font-weight: 720;
+    transition:
+      border-color var(--transition-fast),
+      background var(--transition-fast),
+      transform var(--transition-fast);
+
+    &:hover {
+      border-color: var(--color-primary);
+      background: var(--color-surface-hover);
+      transform: translateY(-1px);
+    }
+  }
+
+  &__item-button {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "merchant total"
+      "date total";
+    align-items: center;
+    gap: 0.3rem var(--space-4);
+    width: 100%;
+    min-height: 6.2rem;
+    padding: var(--space-4);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    color: var(--color-text);
+    background: linear-gradient(145deg, rgb(255 255 255 / 4%), transparent 55%), var(--color-surface);
+    box-shadow: var(--shadow-small);
+    text-align: left;
+    transition:
+      border-color var(--transition-fast),
+      background var(--transition-fast),
+      box-shadow var(--transition-medium),
+      transform var(--transition-medium);
+
+    &::after {
+      position: absolute;
+      right: -1.5rem;
+      bottom: -2.5rem;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgb(191 112 255 / 14%), transparent 70%);
+      content: "";
+      transition: transform var(--transition-medium);
+    }
+
+    &:hover {
+      border-color: rgb(191 112 255 / 34%);
+      background: linear-gradient(145deg, rgb(255 255 255 / 6%), transparent 55%), var(--color-surface-raised);
+      box-shadow: var(--shadow-medium), var(--shadow-glow);
+      transform: translateY(-3px);
+
+      &::after {
+        transform: scale(1.25);
+      }
+    }
+  }
+
+  &__item-merchant {
+    grid-area: merchant;
+    overflow: hidden;
+    font-size: 1.02rem;
+    font-weight: 720;
+    letter-spacing: -0.02em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__item-total {
+    z-index: 1;
+    grid-area: total;
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    font-weight: 760;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__item-date {
+    grid-area: date;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+  }
+}
+
+@media (max-width: 78rem) {
+  .purchase-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 44rem) {
+  .purchase-list {
+    grid-template-columns: minmax(0, 1fr);
+    max-height: none;
+    padding-right: 0;
+    overflow-y: visible;
+  }
+}

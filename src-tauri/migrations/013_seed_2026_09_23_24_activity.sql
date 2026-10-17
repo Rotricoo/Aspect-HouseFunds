@@ -1,0 +1,1 @@
+-- Reserved for future fictional demo activity. No private household data belongs here.

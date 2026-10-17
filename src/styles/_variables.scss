@@ -1,0 +1,67 @@
+:root {
+  color-scheme: dark;
+
+  // Core palette
+  --color-background: #090b10;
+  --color-background-soft: #0e1118;
+  --color-surface: #131720;
+  --color-surface-raised: #191e29;
+  --color-surface-soft: #202634;
+  --color-surface-hover: #272e3d;
+  --color-text: #f5f7fb;
+  --color-text-soft: #d9deea;
+  --color-text-muted: #929bad;
+  --color-border: rgb(255 255 255 / 9%);
+  --color-border-strong: rgb(255 255 255 / 16%);
+
+  // Brand and feedback
+  --color-primary: #bf70ff;
+  --color-primary-hover: #d195ff;
+  --color-primary-soft: rgb(191 112 255 / 14%);
+  --color-blue: #587cff;
+  --color-blue-soft: rgb(88 124 255 / 14%);
+  --color-accent: #b8f36b;
+  --color-accent-soft: rgb(184 243 107 / 12%);
+  --color-success: #68d7a7;
+  --color-success-soft: rgb(104 215 167 / 12%);
+  --color-warning: #f2bf6c;
+  --color-warning-soft: rgb(242 191 108 / 12%);
+  --color-danger: #ff7180;
+  --color-danger-soft: rgb(255 113 128 / 12%);
+  --gradient-brand: linear-gradient(135deg, #587cff 0%, #bf70ff 58%, #f08cd7 100%);
+  --gradient-accent: linear-gradient(135deg, #b8f36b 0%, #68d7a7 100%);
+
+  // Typography
+  --font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-size-small: 0.78rem;
+  --font-size-body: 0.95rem;
+  --font-size-large: clamp(1.35rem, 2vw, 1.8rem);
+  --font-size-display: clamp(2rem, 5vw, 3.8rem);
+
+  // Spacing
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  // Borders
+  --radius-small: 0.65rem;
+  --radius-medium: 1rem;
+  --radius-large: 1.4rem;
+  --radius-xlarge: 2rem;
+  --radius-pill: 999px;
+
+  // Shadows
+  --shadow-small: 0 8px 22px rgb(0 0 0 / 18%);
+  --shadow-medium: 0 24px 60px rgb(0 0 0 / 32%);
+  --shadow-glow: 0 0 40px rgb(191 112 255 / 14%);
+
+  // Layout and motion
+  --content-max-width: 92rem;
+  --transition-fast: 180ms ease;
+  --transition-medium: 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}

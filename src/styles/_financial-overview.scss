@@ -1,0 +1,83 @@
+.financial-overview {
+  &__heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+
+    p {
+      margin-bottom: var(--space-1);
+      color: var(--color-primary-hover);
+      font-size: 0.68rem;
+      font-weight: 760;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .fund-balance-report__section-title {
+      margin-bottom: 0;
+    }
+  }
+
+  &__tabs {
+    display: inline-flex;
+    gap: var(--space-1);
+    padding: var(--space-1);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-background-soft);
+  }
+
+  &__tab {
+    min-height: 2.5rem;
+    padding-inline: 0.95rem;
+    border: 0;
+    border-radius: var(--radius-pill);
+    color: var(--color-text-muted);
+    background: transparent;
+    font-size: 0.78rem;
+    font-weight: 720;
+    white-space: nowrap;
+    transition:
+      color var(--transition-fast),
+      background var(--transition-fast),
+      transform var(--transition-fast);
+
+    &:hover {
+      color: var(--color-text);
+      background: rgb(255 255 255 / 5%);
+    }
+
+    &--active {
+      color: #07100d;
+      background: var(--gradient-brand);
+      box-shadow: 0 8px 20px rgb(35 139 112 / 18%);
+    }
+  }
+
+  &__context {
+    max-width: 78ch;
+    margin: calc(var(--space-2) * -1) 0 var(--space-5);
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 50rem) {
+  .financial-overview {
+    &__heading {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    &__tabs {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    &__tab {
+      flex: 1;
+    }
+  }
+}

@@ -1,0 +1,191 @@
+.recurring-payment-form {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+  background: rgb(2 5 8 / 78%);
+  backdrop-filter: blur(12px);
+
+  &__dialog {
+    width: min(46rem, 100%);
+    max-height: min(52rem, calc(100dvh - 2 * var(--space-5)));
+    overflow-y: auto;
+    border: 1px solid color-mix(in srgb, var(--color-primary) 28%, var(--color-border));
+    border-radius: var(--radius-large);
+    background: linear-gradient(145deg, rgb(16 25 25 / 98%), rgb(10 14 20 / 98%));
+    box-shadow: 0 2rem 5rem rgb(0 0 0 / 55%);
+  }
+
+  &__header {
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+    background: rgb(12 18 21 / 94%);
+    backdrop-filter: blur(12px);
+
+    p {
+      margin: 0 0 var(--space-1);
+      color: var(--color-primary);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+  }
+
+  &__close {
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text);
+    background: rgb(255 255 255 / 4%);
+    font-size: 1.45rem;
+    cursor: pointer;
+  }
+
+  &__context {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-primary-soft);
+
+    span {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+    }
+    strong {
+      color: var(--color-text);
+      font-size: 0.9rem;
+    }
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+    padding: var(--space-5);
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    label > span {
+      color: var(--color-text-muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-small);
+      color: var(--color-text);
+      background: rgb(5 9 13 / 75%);
+      font: inherit;
+    }
+    input:disabled,
+    select:disabled {
+      opacity: 0.5;
+    }
+    textarea {
+      resize: vertical;
+    }
+    small {
+      color: var(--color-text-muted);
+      line-height: 1.45;
+    }
+  }
+
+  &__wide-field,
+  &__notice,
+  &__error,
+  &__actions {
+    grid-column: 1 / -1;
+  }
+  &__notice,
+  &__error {
+    margin: 0;
+    padding: var(--space-3);
+    border-radius: var(--radius-small);
+  }
+  &__notice {
+    color: var(--color-text-muted);
+    background: rgb(255 255 255 / 4%);
+  }
+  &__error {
+    color: #ffabab;
+    background: rgb(255 72 72 / 10%);
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    padding-top: var(--space-2);
+
+    button {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      color: var(--color-text);
+      background: rgb(255 255 255 / 4%);
+      font-weight: 750;
+      cursor: pointer;
+    }
+  }
+
+  &__mark-paid,
+  &__save {
+    border-color: transparent !important;
+    color: #07100c !important;
+    background: var(--color-primary) !important;
+  }
+}
+
+@media (max-width: 40rem) {
+  .recurring-payment-form {
+    padding: var(--space-2);
+    &__dialog {
+      max-height: calc(100dvh - 2 * var(--space-2));
+    }
+    &__context,
+    &__fields {
+      grid-template-columns: 1fr;
+    }
+    &__wide-field,
+    &__notice,
+    &__error,
+    &__actions {
+      grid-column: auto;
+    }
+    &__actions {
+      flex-wrap: wrap;
+    }
+  }
+}
