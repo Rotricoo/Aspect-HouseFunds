@@ -1,4 +1,5 @@
 # Aspect - House Funds
+
 Aspect - House Funds is a local-first desktop application for recording household purchases, shared funds, recurring commitments and settlements. It explains not only who should pay, but how the result was calculated.
 
 It is built as a portfolio project with a focus on clear financial records, configurable household data and maintainable application structure.
