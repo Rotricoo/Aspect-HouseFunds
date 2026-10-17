@@ -130,10 +130,6 @@ Attachments and SQLite databases are created in the local application data direc
 - Before replacing the active database, the application keeps a local recovery copy. Restore files only from a trusted location and verify the result after the application reloads.
 - The browser demo contains fictional data only and saves changes in the current browser's local storage. It does not access the desktop SQLite database or local attachments.
 
-## License
-
-Aspect - House Funds is available under the [MIT License](LICENSE).
-
 ## Roadmap
 
 - Add a monthly review mode for open commitments, unsettled balances and source checks.

@@ -20,7 +20,6 @@
   },
   "keywords": [],
   "author": "Aspect",
-  "license": "MIT",
   "type": "module",
   "devDependencies": {
     "@tauri-apps/cli": "^2.11.5",

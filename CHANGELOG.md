@@ -13,7 +13,7 @@ All notable changes to Aspect - House Funds are documented here.
 - Simple and detailed financial accounting views with filters and CSV export.
 - Data-quality review section in the financial report.
 - Local backup privacy guidance and restore validation for schema compatibility.
-- MIT license, architecture overview and local-first decision record.
+- Architecture overview and local-first decision record.
 
 ### Improved
 
